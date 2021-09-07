@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap');
+
+$font_map1:(  //501~576
+    'h2':30px,
+    'h3':24px,
+    'h4':22px,
+    'p':20px
+);
+
+$font_map2:( //451~500
+    'h2':28px,
+    'h3':22px,
+    'h4':20px,
+    'p':18px
+);
+
+$font_map3:( //415~450
+    'h2':26px,
+    'h3':20px,
+    'h4':18px,
+    'p':16px
+);
+
+$font_map4:( //385~414
+    'h2':24px,
+    'h3':18px,
+    'h4':16px,
+    'p':14px
+);
+
+$font_map5:( //321~384
+    'h2':22px,
+    'h3':20px,
+    'h4':14px,
+    'p':12px
+);
+
+$font_map6:( //320以下
+    'h2':20px,
+    'h3':18px,
+    'h4':12px,
+    'p':10px
+);
+
+@mixin font_size($font-map) {
+    @each $key,$val in $font-map {
+        #{$key} {
+            font-size: $val;
+            font-family: 'Noto Sans TC', sans-serif;
+            @content;
+        }
+    }
+}
+
+@include mobile{
+    @include font-size($font_map1);
+}
+
+@include  mobile2{
+    @include font_size($font_map2);
+}
+
+@include mobile3{
+    @include font_size($font_map3);
+}
+
+@include mobile4{
+    @include font_size($font_map4);
+}
+
+@include mobile5{
+    @include font_size($font_map5);
+}
+
+@include mobile6{
+    @include font_size($font_map6);
+}

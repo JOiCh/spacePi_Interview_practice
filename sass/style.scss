@@ -1,0 +1,1615 @@
+@import 'reset';
+@import 'var';
+@import 'rwd';
+@import 'font';
+
+@include mobile {
+
+    // *{
+    //     outline: 1px solid red;
+    // }
+    header {
+        h1 {
+            height: 53px;
+
+            img {
+                height: 53px;
+                cursor: pointer;
+            }
+        }
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 1rem 1rem 0px 1rem;
+
+        h2 {
+            font-weight: bold;
+            color: $main_bl;
+            margin-left: 50px;
+
+            .yen {
+                font-weight: bold;
+                font-size: 30px;
+                color: $main_bl;
+            }
+        }
+
+        #reload {
+            margin-right: 50px;
+            cursor: pointer;
+        }
+
+        #sort {
+            cursor: pointer;
+        }
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-around;
+        background-color: $topnav_bg;
+
+        a {
+            font-size: 24px;
+            font-weight: bold;
+            color: $dark_grey;
+            padding: 20px;
+            position: relative;
+            cursor: pointer;
+
+            &::after {
+                transition: all .5s;
+                position: absolute;
+                content: '';
+                display: block;
+                width: 0%;
+                bottom: 0px;
+            }
+        }
+
+        a.chk {
+            color: $main_bl;
+
+            &::after {
+                background-color: $main_bl;
+                height: 2px;
+                width: 50%;
+            }
+        }
+    }
+
+    footer {
+        width: 100%;
+        padding: 0px 20px;
+        display: flex;
+        position: fixed;
+        z-index: 5;
+        top: initial;
+        left: 0px;
+        bottom: 0px;
+        justify-content: space-around;
+        background-color: white;
+        border-radius: 30px 30px 0px 0px;
+        box-shadow: 0px 5px 12px #666;
+
+        a {
+            cursor: pointer;
+            padding: 10px 0px;
+
+            img {
+                display: block;
+                margin: 0 auto;
+            }
+
+            p {
+                margin-top: 5px;
+                color: rgb(183, 183, 183);
+                text-align: center;
+            }
+        }
+
+        a:nth-of-type(1) {
+            p {
+                color: $main_bl;
+            }
+        }
+
+    }
+
+    p.today,
+    p.morning,
+    p.list {
+        margin: 20px;
+    }
+    
+    section {
+        .date {
+            display: flex;
+            border-bottom: 3px solid $topnav_bg;
+            overflow-x: auto;
+
+            a {
+                position: relative;
+                padding: 12px 40px;
+                font-size: 22px;
+                font-family: 'Noto Sans TC', sans-serif;
+                color: $main_grey;
+                cursor: pointer;
+
+                &::after {
+                    transition: all .5s;
+                    position: absolute;
+                    content: '';
+                    display: block;
+                    width: 0%;
+                    bottom: 0px;
+                }
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 10px;
+                white-space: nowrap;
+            }
+
+            a.dateChk {
+                color: $dark_grey;
+
+                &::after {
+                    background-color: $dark_grey;
+                    height: 3px;
+                    width: 35%;
+                }
+            }
+
+        }
+    }
+
+    .ballBox {
+        display: flex;
+        overflow-x: auto;
+
+        a {
+            cursor: pointer;
+            position: relative;
+            padding: 10px 40px 45px 40px;
+
+            img {
+                display: block;
+            }
+
+            h4 {
+                position: absolute;
+                bottom: 14px;
+                color: $main_grey;
+                font-weight: bold;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, 35%);
+                white-space: nowrap;
+            }
+        }
+
+        a.ballChk {
+            background-image: url(../imgs/bg.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
+    .handball,
+    .basketball,
+    .volley {
+        margin: 20px;
+    }
+
+    .banner {
+        img {
+            width: 95%;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+
+    .broadcaster {
+        .casterUp {
+            width: 95%;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 11px;
+            border-bottom: 1px solid rgb(218, 218, 218);
+
+            h4:nth-of-type(1) {
+                transform: translateY(-9px);
+                color: $dark_grey;
+
+                img {
+                    transform: translateY(5px);
+                }
+            }
+
+            h4:nth-of-type(2) {
+                color: $main_grey;
+            }
+        }
+
+        .casterBelow {
+            display: flex;
+            width: 100%;
+            overflow-x: auto;
+            border-bottom: 4px solid #dbebfd;
+
+            a {
+                position: relative;
+                padding: 11px;
+
+                .avatar {
+                    width: 84px;
+                    height: 84px;
+                    border-radius: 100%;
+                    border: 5px solid $pink;
+
+                    img {
+                        width: 74px;
+                        height: 74px;
+                        border-radius: 100%;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+
+                }
+
+                .live {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, 10%);
+                    padding: 0px 4px;
+                    font-family: 'Noto Sans TC', sans-serif;
+                    background-color: $pink;
+                    border: 3px solid white;
+                    border-radius: 6px;
+                    display: inline-block;
+                    font-size: 14px;
+                    line-height: 18px;
+                    color: white;
+                    white-space: nowrap;
+                }
+
+                .name {
+                    margin-top: 15px;
+                    text-align: center;
+                }
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 5px;
+            }
+        }
+    }
+
+    .game {
+        border-bottom: 4px solid #fadbdf;
+        margin-bottom: 92px;
+        .gameTitle {
+            h3 {
+                padding: 10px 20px;
+            }
+
+            background-image: url(../imgs/up.png);
+            background-repeat: no-repeat;
+            background-position: top 20px right 25px;
+            transition: all .5s;
+            cursor: pointer;
+        }
+
+        .gameCnt {
+
+            .gameItem {
+                width: 93%;
+                margin: 0 auto;
+                position: relative;
+
+                img.backIcon {
+                    position: absolute;
+                    right: -10px;
+                    top: 51%;
+                    z-index: 5;
+                    transform: translateY(30px);
+                    cursor: pointer;
+                }
+                img#theback{
+                    transform: translateY(55px);
+                }
+                .session1 {
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 5px 0px;
+                    border-top: 1px solid rgb(204, 204, 204);
+                    border-bottom: 1px solid rgb(204, 204, 204);
+
+                    p,
+                    h4 {
+                        color: $word_grey;
+                    }
+
+                    p {
+                        font-size: 16px;
+                        cursor: pointer;
+
+                        img {
+                            transform: translate(2px, 2px);
+                        }
+                    }
+                }
+                .score{
+                    display: flex;
+                    justify-content: space-around;
+                    padding: 10px;
+                    h3.team{
+                       display: flex;
+                       align-items: center;
+                       font-size: 16px;
+                       img{
+                           height: 30px;
+                       }
+                    }
+                    h3.team:nth-of-type(1){
+                        img{
+                            margin-right: 10px;
+                        }
+                    }
+                    h3.team:nth-of-type(2){
+                        img{
+                            margin-left: 10px;
+                        }
+                    }
+                    p{
+                        line-height: 30px;
+                        font-weight: bold;
+                        color: $main_bl;
+                    }
+                }
+                .belowFlex {
+                    display: flex;
+                    position: relative;
+                    margin-bottom: 20px;
+                    &::after{
+                        position: absolute;
+                        bottom: -5px;
+                        left: 63%;
+                        transform: translateX(-50%);
+                        content: '';
+                        display: block;
+                        background-color: rgb(199, 199, 199);
+                        width: 1rem;
+                        height: 3px;
+                        border-radius: 100%;
+                        
+                    }
+
+                    aside {
+                        height: 245px;
+                        width: 157px;
+                        .team1,
+                        .team2 {
+                            display: flex;
+                            align-items: center;
+                            padding: 10px 10px;
+
+                            img {
+                                margin-right: 10px;
+                                height: 30px;
+                            }
+
+                            h3 {
+                                margin-right: 10px;
+                                white-space: nowrap;
+                                font-size: 16px;
+                            }
+
+                            span {
+                                color: $main_bl;
+                                font-family: 'Noto Sans TC', sans-serif;
+                                font-size: 20px;
+                                font-weight: bold;
+                                margin-left: auto;
+                            }
+
+                        }
+
+                        .icon {
+                            position: absolute;
+                            display: inline-block;
+                            bottom: 10px;
+                            left: 10px;
+
+                            img {
+                                margin-right: 7px;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+
+                    //=====第二個gameItem======
+                    aside.girl {
+                        width: 157px ;
+                        position: relative;
+                        overflow: hidden;
+                        flex-shrink: 0;
+
+                            img.imgGirl {
+                                width: 100%;
+                                height: 250px;
+                                object-fit: cover;
+                                object-position: center;
+                                transform: translateY(5px);
+                            }
+
+                            .girlName {
+                                display: flex;
+                                justify-content: space-between;
+                                position: absolute;
+                                bottom: 44px;
+                                left: 0px;
+                                width: 100%;
+                                background-color: rgba(0, 0, 0, 0.35);
+                                box-shadow:0px 0px 10px 6px rgba(0, 0, 0, 0.35);
+                                h4{
+                                    margin-left: 10px;
+                                    color: white;
+                                }
+                                img{
+                                    height: 25px;
+                                }
+                            }
+
+                            h4.click {
+                                width: 100%;
+                                padding: 10px 18px;
+                                position: absolute;
+                                bottom: 0px;
+                                left: 0px;
+                                text-align: center;
+                                background-color: rgba(0, 0, 0, 0.644);
+                                color: rgb(144, 177, 255);
+                            }
+                        
+
+                    }
+
+                    //=========================
+                    .tableBox {
+                        display: flex;
+                        width: 100%;
+
+                        table.tableLeft,
+                        table.tableRight {
+                            border-collapse: separate;
+                            border-spacing: 5px;
+                            text-align: center;
+
+                            th,
+                            td {
+                                background-color: $tabel_grey;
+                                vertical-align: middle;
+                                white-space: nowrap;
+                            }
+
+                            th {
+                                //padding: 10px;
+                                font-size: 16px;
+                                font-weight: bold;
+                                height: 40px;
+                            }
+
+                            td {
+                                position: relative;
+                                //padding: 10px;
+                                font-size: 16px;
+                                color: $word_grey;
+
+                                .triangle {
+                                    position: absolute;
+                                    left: 13px;
+                                    bottom: 17px;
+                                    display: inline-block;
+                                    width: 0;
+                                    height: 0;
+                                    border-top: 0px solid transparent;
+                                    border-right: 6px solid transparent;
+                                    border-bottom: 6px solid $red;
+                                    border-left: 6px solid transparent;
+                                }
+
+                                h3 {
+                                    font-size: 16px;
+                                    color: $dark_grey;
+                                    font-weight: bold;
+                                }
+
+                                h3.red {
+                                    color: $red
+                                }
+
+                                h3.gr {
+                                    color: $green;
+                                }
+
+                                h4 {
+                                    font-size: 16px;
+                                }
+
+                                h4:nth-of-type(2) {
+                                    margin-top: 10px;
+                                    color: $dark_grey;
+                                    font-weight: bold
+                                }
+                            }
+
+                        }
+
+                        table.tableLeft {
+                            width: 33%;
+                        }
+
+                        table.tableRight {
+                            flex-grow: 1;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include mobile2 {
+    header {
+        h2 {
+            margin-left: 20px;
+
+            .yen {
+                font-size: 28px;
+            }
+        }
+
+        #reload {
+            margin-right: 20px;
+        }
+    }
+
+    nav {
+        a {
+            font-size: 22px;
+        }
+    }
+
+    section {
+        .date {
+            a {
+                font-size: 20px;
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 3px;
+            }
+        }
+    }
+    .game {
+
+        .gameCnt {
+
+            .gameItem {
+
+                img.backIcon {
+                    height: 18px;
+                    transform: translateY(28px);
+                    
+                }
+                img#theback{
+                    height: 18px;
+                    transform: translateY(53px);
+                }
+                .score{
+                   
+                    h3.team{
+                       font-size: 14px;
+                       img{
+                           height: 25px;
+                       }
+                    }
+                    
+                }
+                .belowFlex {
+
+                    aside {
+                        height: 215px;
+                        width: 140px;
+                        .team1,
+                        .team2 {
+                            padding: 10px 5px;
+
+                            img {
+                                margin-right: 10px;
+                                height: 25px;
+                            }
+
+                            h3 {
+                                margin-right: 7px;
+                                font-size: 14px;
+                            }
+
+                            span {
+                                font-size: 18px;
+                            }
+
+                        }
+
+                        // .icon {
+                        //     bottom: 10px;
+                        //     left: 10px;
+
+                        //     img {
+                        //         margin-right: 7px;
+                        //     }
+                        // }
+                    }
+
+                    //=====第二個gameItem======
+                    aside.girl {
+                        width: 128px ;
+
+                            img.imgGirl {
+                                height: 220px;
+                            }
+
+                            .girlName {
+                                bottom: 34px;
+                                align-items: center;
+                                box-shadow:0px 0px 5px 6px rgba(0, 0, 0, 0.35);
+                                h4{
+                                    font-size: 16px;
+                                }
+                                img{
+                                    height: 18px;
+                                }
+                            }
+
+                            h4.click {
+                                padding: 5px 18px;
+                                font-size: 16px;
+                            }
+                        
+
+                    }
+
+                    //=========================
+                    .tableBox {
+
+                        table.tableLeft,
+                        table.tableRight {
+                            border-spacing: 4px;
+
+                            td {
+
+                                .triangle {
+                                    bottom: 10px;
+                                }
+
+                                h4:nth-of-type(2) {
+                                    margin-top: 8px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+    
+}
+
+@include mobile3 {
+    header {
+        h1 {
+            height: 40px;
+
+            img {
+                height: 40px;
+            }
+        }
+
+        h2 {
+            margin-left: 20px;
+
+            .yen {
+                font-size: 26px;
+            }
+        }
+
+        #reload {
+            height: 18px;
+            margin-right: 20px;
+        }
+
+        #sort {
+            height: 22px;
+        }
+    }
+
+    nav {
+        a {
+            font-size: 20px;
+            padding: 15px;
+        }
+
+        a.chk {
+            &::after {
+                width: 60%;
+            }
+        }
+    }
+
+    footer {
+        border-radius: 27px 27px 0px 0px;
+
+        a {
+            padding: 8px 0px;
+
+            img {
+                height: 35px;
+            }
+
+        }
+
+    }
+
+    section {
+        .date {
+            a {
+                font-size: 18px;
+                padding: 12px 20px
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 20px;
+            }
+
+            a.dateChk {
+                &::after {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .ballBox {
+        a {
+            padding: 8px 25px 45px 25px;
+
+            img {
+                width: 32px;
+                transform: translateY(3px);
+            }
+
+            h4 {
+                transform: translate(-50%, 20%);
+            }
+        }
+
+        a:nth-of-type(1) {
+            margin-left: 17px;
+        }
+
+        a.ballChk {
+            background-size: 105%;
+        }
+
+    }
+
+    .broadcaster {
+        .casterUp {
+            h4:nth-of-type(1) {
+                transform: translateY(-12px);
+
+                img {
+                    transform: translateY(9px);
+                }
+            }
+
+            h4:nth-of-type(2) {
+                img {
+                    transform: translateY(2px);
+                }
+            }
+        }
+
+        .casterBelow {
+            a {
+                .avatar {
+                    width: 70px;
+                    height: 70px;
+
+                    img {
+                        width: 60px;
+                        height: 60px;
+                    }
+                }
+
+                .live {
+                    font-size: 10px;
+                    transform: translate(-50%, 13%);
+                }
+
+                .name {
+                    margin-top: 12px;
+                }
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 0px;
+            }
+        }
+    }
+    .game {
+
+        .gameCnt {
+            .gameTitle {
+               
+                background-size: 14px;
+                background-position: top 20px right 25px;
+            
+            }
+
+            .gameItem {
+                width: 95.5%;
+                img.backIcon {
+                    height: 15px;
+                    right: -5px;
+                    transform: translateY(30px);
+                    
+                }
+                img#theback{
+                    height: 15px;
+                    transform: translateY(55px);
+                }
+                .session1 {
+
+                    p {
+
+                        img {
+                            height: 14px;
+                            transform: translate(2px, 2px);
+                        }
+                    }
+                }
+                .score{
+                    padding: 7px;
+                }
+                
+                .belowFlex {
+                    aside {
+                        height: 210px;
+                        width: 130px;
+                        .team1,
+                        .team2 {
+                            padding: 10px 5px;
+
+                            img {
+                                margin-right: 8px;
+                                height: 23px;
+                            }
+
+                            h3 {
+                                margin-right: 7px;
+                            }
+
+                            span {
+                                font-size: 16px;
+                            }
+
+                        }
+
+                        .icon {
+                            bottom: 8px;
+                            left: 8px;
+
+                        }
+                    }
+
+                    //=====第二個gameItem======
+                    aside.girl {
+                        width: 123px ;
+
+                            img.imgGirl {
+                                height: 210px;
+                            }
+
+                            h4.click {
+                                padding: 5px 18px;
+                                font-size: 16px;
+                            }
+                    }
+
+                    //=========================
+                    .tableBox {
+
+                        table.tableLeft,
+                        table.tableRight {
+                            th {
+                                font-size: 14px;
+                            }
+
+                            td {
+                                font-size: 14px;
+                                .triangle {
+                                    bottom: 10px;
+                                    border-top: 0px solid transparent;
+                                    border-right: 5px solid transparent;
+                                    border-bottom: 5px solid $red;
+                                    border-left: 5px solid transparent;
+                                }
+                                h3{
+                                    font-size: 14px;
+                                }
+                                h4 {
+                                    font-size: 14px;
+                                }
+                                h4:nth-of-type(2) {
+                                    margin-top: 6px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include mobile4 {
+    header {
+        h1 {
+            height: 36px;
+
+            img {
+                height: 36px;
+            }
+        }
+
+        h2 {
+            margin-left: 50px;
+
+            .yen {
+                font-size: 24px;
+            }
+        }
+
+        #reload {
+            height: 16px;
+            margin-right: 15px;
+        }
+
+        #sort {
+            height: 20px;
+        }
+    }
+
+    nav {
+        a {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        a.chk {
+            &::after {
+                width: 65%;
+            }
+        }
+    }
+
+    footer {
+        border-radius: 23px 23px 0px 0px;
+
+        a {
+            padding: 11px 0px;
+
+            img {
+                height: 30px;
+            }
+
+            p {
+                margin-top: 2px;
+            }
+        }
+
+    }
+
+    section {
+        .date {
+            a {
+                font-size: 16px;
+                padding: 8px 20px
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 15px;
+            }
+
+            a.dateChk {
+                &::after {
+                    width: 50%;
+                }
+            }
+        }
+    }
+
+    .ballBox {
+        a {
+            h4 {
+                transform: translate(-50%, 30%);
+            }
+        }
+
+        a:nth-of-type(1) {
+            margin-left: 10px;
+        }
+
+    }
+
+    .broadcaster {
+        .casterUp {
+            h4:nth-of-type(1) {
+                transform: translateY(-10px);
+
+                img {
+                    height: 29px;
+                }
+            }
+        }
+
+        .casterBelow {
+            a {
+                padding: 7px 11px;
+
+                .avatar {
+                    width: 60px;
+                    height: 60px;
+                    border: 4px solid $pink;
+
+                    img {
+                        width: 52px;
+                        height: 52px;
+                    }
+                }
+
+                .live {
+                    font-size: 8px;
+                    transform: translate(-50%, 5%);
+                    border: 2px solid white;
+                }
+
+                .name {
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .game {
+        margin-bottom: 82px;
+        .gameCnt {
+
+            .gameItem {
+                
+                .session1 {
+
+                    p {
+
+                        img#secMore {
+                            transform: translate(2px, 1px);
+                        }
+                    }
+                }
+                .score{
+                    padding: 5px;
+                    h3.team{
+                        img{
+                            height: 20px;
+                        }
+                    }
+                    p{
+                        font-size: 16px;
+                    }
+                }
+                
+                .belowFlex {
+                    margin-bottom: 15px;
+                    aside {
+                        height: 200px;
+                        width: 115px;
+                        .team1,
+                        .team2 {
+                            padding: 10px 3px;
+
+                            img {
+                                margin-right: 4px;
+                                height: 20px;
+                            }
+
+                        }
+
+                    }
+
+                    //=====第二個gameItem======
+                    aside.girl {
+                        width: 113px ;
+
+                            img.imgGirl {
+                                height: 200px;
+                            }
+
+                    }
+
+                    //=========================
+                    .tableBox {
+
+                        table.tableLeft,
+                        table.tableRight {
+                           
+                            td {
+                               
+                                .triangle {
+                                    left: 7px;
+                                }
+                                h3{
+                                    font-size: 14px;
+                                }
+                                h4 {
+                                    font-size: 14px;
+                                }
+                                h4:nth-of-type(2) {
+                                    margin-top: 5px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include mobile5 {
+    header {
+        margin: 0.8rem 0.8rem 0px 0.8rem;
+
+        h1 {
+            height: 32px;
+
+            img {
+                height: 32px;
+            }
+        }
+
+        h2 {
+            margin-left: 50px;
+
+            .yen {
+                font-size: 22px;
+            }
+        }
+
+        #reload {
+            height: 13px;
+            transform: translateY(2px);
+            margin-right: 15px;
+        }
+
+        #sort {
+            height: 18px;
+        }
+    }
+
+    nav {
+        a {
+            font-size: 16px;
+        }
+    }
+
+    footer {
+        border-radius: 23px 23px 0px 0px;
+
+        a {
+            padding: 10px 0px;
+
+            img {
+                height: 25px;
+            }
+
+            p {
+                margin-top: 0px;
+            }
+        }
+
+    }
+
+    section {
+        .date {
+            a {
+                font-size: 14px;
+                padding: 5px 18px
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 15px;
+            }
+
+            a.dateChk {
+                &::after {
+                    width: 45%;
+                }
+            }
+        }
+    }
+
+    .ballBox {
+        a {
+            padding: 8px 17px 35px 17px;
+
+            img {
+                transform: translateY(4px);
+            }
+        }
+
+        a:nth-of-type(1) {
+            margin-left: 15px;
+        }
+
+        a.ballChk {
+            background-size: 108%;
+        }
+
+    }
+
+    .broadcaster {
+        .casterUp {
+            h4:nth-of-type(1) {
+                transform: translateY(-6px);
+
+                img {
+                    height: 23px;
+                }
+            }
+
+            h4:nth-of-type(2) {
+                img {
+                    height: 12px;
+                    transform: translateY(-0px);
+                }
+            }
+        }
+
+        .casterBelow {
+            a {
+                padding: 4px 9px;
+
+                .avatar {
+                    width: 55px;
+                    height: 55px;
+                    border: 3px solid $pink;
+
+                    img {
+                        width: 49px;
+                        height: 49px;
+                    }
+                }
+
+                .live {
+                    line-height: 16px;
+                    font-size: 6px;
+                    transform: translate(-50%, 5%);
+                }
+
+                .name {
+                    margin-top: 8px;
+                }
+            }
+        }
+    }
+    .game {
+        margin-bottom: 72px;
+        .gameCnt {
+
+            .gameItem {
+                img#theback{
+                    transform: translateY(50px);
+                }
+                .session1 {
+
+                    p {
+                        font-size: 12px;
+                        img{
+                            height: 12px;
+                        }
+                    }
+                }
+            
+                .belowFlex {
+                    margin-bottom: 12px;
+
+                    //=====第二個gameItem======
+                    aside.girl {
+                        width: 113px ;
+
+                            img.imgGirl {
+                                height: 193px;
+                            }
+                            .girlName{
+                                box-shadow:0px 0px 4px 5px rgba(0, 0, 0, 0.35);
+                                h4{
+                                    font-size: 14px;
+                                    margin-left: 6px;
+                                }
+                            }
+                    }
+
+                    //=========================
+                    .tableBox {
+
+                        table.tableLeft,
+                        table.tableRight {
+                           
+                            td {
+                               
+                                h3{
+                                    transform: translateY(-2px);
+                                }
+                                h4:nth-of-type(2) {
+                                    margin-top: 3px;
+                                }
+                            }
+
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@include mobile6 {
+    header {
+        margin: 0.7rem 0.7rem 0px 0.7rem;
+
+        h1 {
+            height: 28px;
+
+            img {
+                height: 28px;
+            }
+        }
+
+        h2 {
+            margin-left: 20px;
+
+            .yen {
+                font-size: 20px;
+            }
+        }
+
+        #reload {
+            height: 12px;
+            transform: translateY(0px);
+            margin-right: 10px;
+        }
+
+        #sort {
+            height: 16px;
+        }
+    }
+
+    nav {
+        a {
+            font-size: 14px;
+            padding: 7px;
+        }
+
+        a.chk {
+            &::after {
+                width: 70%;
+            }
+        }
+    }
+
+    footer {
+        border-radius: 20px 20px 0px 0px;
+
+        a {
+            padding: 8px 0px;
+
+            img {
+                height: 20px;
+            }
+
+        }
+
+    }
+
+    section {
+        .date {
+            a {
+                font-size: 12px;
+                padding: 5px 16px
+            }
+
+            a:nth-of-type(1) {
+                margin-left: 12px;
+            }
+
+            a.dateChk {
+                &::after {
+                    width: 45%;
+                }
+            }
+        }
+    }
+
+    .ballBox {
+        a {
+            padding: 0px 15px 35px 15px;
+
+            img {
+                width: 28px;
+                transform: translateY(10px);
+            }
+        }
+
+        a:nth-of-type(1) {
+            margin-left: 12px;
+        }
+
+        a.ballChk {
+            background-size: 109%;
+        }
+
+    }
+
+    .broadcaster {
+        .casterUp {
+            h4:nth-of-type(1) {
+                img {
+                    height: 20px;
+                }
+            }
+
+            h4:nth-of-type(2) {
+                img {
+                    height: 10px;
+                }
+            }
+        }
+
+        .casterBelow {
+            a {
+                .avatar {
+                    width: 48px;
+                    height: 48px;
+
+                    img {
+                        width: 42px;
+                        height: 42px;
+                    }
+                }
+
+                .live {
+                    line-height: 12px;
+                }
+
+                .name {
+                    margin-top: 0px;
+                }
+            }
+        }
+    }
+    .game {
+        margin-bottom: 65px;
+        .gameCnt {
+
+            .gameItem {
+                
+                .score{
+                    h3.team{
+                        font-size: 12px;
+                        img{
+                            height: 18px;
+                        }
+                    }
+                    p{
+                        font-size: 14px;
+                    }
+                }
+            
+                .belowFlex {
+                    aside{
+                        width:100px;
+                        height: 190px;
+                        .team1,.team2{
+                            img{
+                                height: 18px;
+                            }
+                            h3{
+                                font-size: 12px
+                            }
+                            span{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    //=====第二個gameItem======
+                    aside.girl {
+                        width: 100px ;
+
+                            img.imgGirl {
+                                height: 185px;
+                            }
+                            .girlName{
+                                img{
+                                    height: 15px;
+                                }
+                                h4{
+                                    font-size: 14px;
+                                    margin-left: 6px;
+                                }
+                            }
+                    }
+
+                    //=========================
+                    .tableBox {
+                        table.tableLeft,
+                        table.tableRight {
+                            th{
+                                font-size: 12px;
+                                height: 20px;
+                            }
+                            td {
+                                .triangle{
+                                    bottom: 13px;
+                                    left: 4px;
+                                }
+                                h3{
+                                    transform: translateY(-5px);
+                                    font-size: 12px;
+                                }
+                                h4:nth-of-type(2) {
+                                    margin-top: 0px;
+                                }
+                            }
+
+                        }
+                        table.tableLeft {
+                            th{
+                                padding: 6px 0px;
+                            }
+                        }
+                        table.tableRight{
+                            td{
+                                height: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}

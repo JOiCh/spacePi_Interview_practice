@@ -1,0 +1,42 @@
+$mobile :576px;
+$mobile2 :500px;
+$mobile3 :450px;
+$mobile4 :414px;
+$mobile5 :384px;
+$mobile6 :320px;
+
+  @mixin mobile {   //501~576
+    @media all and  (max-width: $mobile) {
+       @content 
+    }
+  };
+
+  @mixin mobile2 {   //451~500
+    @media all and  (max-width: $mobile2) {
+       @content 
+    }
+  };
+
+  @mixin mobile3 {   //415~450
+    @media all and (max-width: $mobile3) {
+       @content 
+    }
+  };
+
+  @mixin mobile4 {   //385~414
+    @media all and (max-width: $mobile4) {
+       @content 
+    }
+  };
+
+  @mixin mobile5 {  //321~384
+    @media all and (max-width : $mobile5) {
+       @content 
+    }
+  };
+
+  @mixin mobile6 { //320以下
+    @media all and (max-width : $mobile6) {
+       @content 
+    }
+  };

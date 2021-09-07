@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sass/style.css">
+    <title>sexy sport</title>
+    <style>
+        .turnBg {
+            background-image: url(./imgs/down.png) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <header>
+            <h1>
+                <img src="./imgs/logo.png">
+            </h1>
+            `<h2><span class="yen">￥</span>{{total}}</h2>
+            <img src="./imgs/reload.png" id="reload">
+            <img src="./imgs/sort.png" id="sort">
+        </header>
+        <nav>
+            <a @click="content='today'" :class="{'chk':content === 'today'}">今日</a>
+            <a @click="content='morning'" :class="{'chk':content === 'morning'}">早盤</a>
+            <a @click="content='ball'" :class="{'chk':content === 'ball'}">滾球</a>
+            <a @click="content='list'" :class="{'chk':content === 'list'}">串關</a>
+        </nav>
+        <component :is="content"></component>
+        <footer>
+            <a>
+                <img src="./imgs/hall.png">
+                <p>大廳</p>
+            </a>
+            <a>
+                <img src="./imgs/compass.png">
+                <p>主播賽事</p>
+            </a>
+            <a>
+                <img src="./imgs/rate.png">
+                <p>排行</p>
+            </a>
+            <a>
+                <img src="./imgs/record.png">
+                <p>投注紀錄</p>
+            </a>
+            <a>
+                <img src="./imgs/member.png">
+                <p>我的</p>
+            </a>
+        </footer>
+      
+    </div>
+
+    <script src="./js/vue.js"></script>
+    <script>
+        Vue.component('today', {
+            template: `
+                <p class="today">今日內容尚未更新</p>
+            `,
+        });
+        Vue.component('morning', {
+            template: `
+                <p class="morning">早盤內容尚未更新</p>
+            `,
+        });
+        Vue.component('ball', {
+            template: `
+               <div>
+                    <section>
+                        <div class="date">
+                            <a @click="curr='today'" :class="{'dateChk':curr === 'today'}">今日</a>
+                            <a @click="curr='3/05'" :class="{'dateChk':curr === '3/05'}">3/05</a>
+                            <a @click="curr='3/06'" :class="{'dateChk':curr === '3/06'}">3/06</a>
+                            <a @click="curr='3/07'" :class="{'dateChk':curr === '3/07'}">3/07</a>
+                            <a @click="curr='3/08'" :class="{'dateChk':curr === '3/08'}">3/08</a>
+                            <a @click="curr='3/09'" :class="{'dateChk':curr === '3/09'}">3/09</a>
+                            <a @click="curr='3/10'" :class="{'dateChk':curr === '3/10'}">3/10</a>
+                            <a @click="curr='3/11'" :class="{'dateChk':curr === '3/11'}">3/11</a>
+                        </div>
+                    </section>
+                    <div class="ballBox">
+                        <a @click="content='handball'" :class="{'ballChk':content === 'handball'}">
+                            <img src="./imgs/soccer.png" alt="">
+                            <h4>手球</h4>
+                        </a>
+                        <a @click="content='soccer'" :class="{'ballChk':content === 'soccer'}">
+                            <img src="./imgs/soccerblack.png" alt="">
+                            <h4>足球</h4>
+                        </a>
+                        <a @click="content='basketball'" :class="{'ballChk':content === 'basketball'}">
+                            <img src="./imgs/basketball.png" alt="">
+                            <h4>籃球</h4>
+                        </a>
+                        <a @click="content='volley'" :class="{'ballChk':content === 'volley'}">
+                            <img src="./imgs/volly.png" alt="">
+                            <h4>排球</h4>
+                        </a>
+                        <a @click="content='pp'" :class="{'ballChk':content === 'pp'}">
+                            <img src="./imgs/pingpong.png" alt="">
+                            <h4>乒乓球</h4>
+                        </a>
+                        <a @click="content='tennis'" :class="{'ballChk':content === 'tennis'}">
+                            <img src="./imgs/tennis.png" alt="">
+                            <h4>網球</h4>
+                        </a>
+                    </div>
+                    <component :is="content"></component>
+               </div>
+            `,
+            data() {
+                return {
+                    curr: 'today',
+                    content: 'soccer'
+                };
+            },
+        });
+        Vue.component('list', {
+            template: `
+                <p class="list">串關內容尚未更新</p>
+            `,
+        });
+
+        //=======子組件=========
+        Vue.component('soccer', {
+            template: `
+            <div>
+                <div class="banner">
+                    <img src="./imgs/banner.png" alt="">
+                </div>
+                <div class="broadcaster">
+                    <div class="casterUp">
+                        <h4>
+                            <img src="./imgs/anchor.png" alt="">
+                            在線主播
+                        </h4>
+                        <h4>
+                            更多
+                            <img src="./imgs/more.png" alt="">
+                        </h4>
+                    </div>
+                  
+                    <div class="casterBelow">
+                        <a v-for="person in data">
+                            <div class="avatar">
+                                <img :src="person.pic" alt="">
+                            </div>
+                            <div class="live" v-text="person.live"></div>
+                            <p class="name" v-text="person.name"></p>
+                        </a>
+                    </div>
+                </div>
+                <div class="game">
+                    <div class="gameTitle" @click="isActive = !isActive;" :class="{turnBg: isActive}">
+                        <h3>美洲冠軍聯賽</h3>
+                    </div>
+                    <div class="gameCnt" v-if="isActive">
+                        <div class="gameItem">
+                            <img src="./imgs/back.png" class="backIcon">
+                            <div class="session1">
+                                <h4>✰ 上半場 &ensp; 02:23 </h4>
+                                <p>
+                                    55+
+                                    <img src="./imgs/more.png">
+                                </p>
+                            </div>
+                            <div class="belowFlex">
+                                <aside>
+                                    <div class="team1">
+                                        <img src="./imgs/blueteam.png">
+                                        <h3>亞特蘭大聯</h3>
+                                        <span>2</span>
+                                    </div>
+                                    <div class="team2">
+                                        <img src="./imgs/redteam.png">
+                                        <h3>莫塔瓜</h3>
+                                        <span>0</span>
+                                    </div>
+                                    <div class="icon">
+                                        <img src="./imgs/court.png" alt="">
+                                        <img src="./imgs/vedio.png" alt="">
+                                    </div>
+                                </aside>
+                                <thetable></thetable>
+                            </div>
+                        </div>
+
+                        <!--第二個gameItem-->
+                        <div class="gameItem" v-for="item in 2">
+                            <img src="./imgs/back.png" class="backIcon" id="theback">
+                            <div class="session1">
+                                <h4>✰ 下半場 &ensp; 02:23 </h4>
+                                <p>
+                                    55+
+                                    <img src="./imgs/more.png" id="secMore">
+                                </p>
+                            </div>
+                            <div class="score">
+                                <h3 class="team"><img src="./imgs/blueteam.png" alt="">亞特蘭大聯</h3>
+                                <p>2&ensp;-&ensp;0</p>
+                                <h3 class="team">莫塔瓜<img src="./imgs/redteam.png" alt=""></h3>
+                            </div>
+                            <div class="belowFlex">
+                                <aside class="girl">
+                                        <img src="./imgs/girl.png" class="imgGirl">
+                                        <div class="girlName">
+                                            <h4>米兒</h4>
+                                            <img src="./imgs/live.png">
+                                        </div>
+                                        <h4 class="click">點擊觀看</h4>
+                                </aside>
+                                <thetable></thetable>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            `,
+            data() {
+                return {
+                    isActive: true,
+                    data: [
+                        {
+                            avatar: 1,
+                            live: 'Living',
+                            name: 'KIMI',
+                            pic: './imgs/avatar/1.jpg',
+                        },
+                        {
+                            avatar: 2,
+                            live: '直播中',
+                            name: 'AMY',
+                            pic: './imgs/avatar/2.jpg',
+                        },
+                        {
+                            avatar: 3,
+                            live: '直播中',
+                            name: 'KIWI',
+                            pic: './imgs/avatar/3.jpg',
+                        },
+                        {
+                            avatar: 4,
+                            live: '直播中',
+                            name: 'KITTY',
+                            pic: './imgs/avatar/4.jpg',
+                        },
+                        {
+                            avatar: 5,
+                            live: '直播中',
+                            name: 'MIMI',
+                            pic: './imgs/avatar/5.jpg',
+                        },
+                        {
+                            avatar: 6,
+                            live: '直播中',
+                            name: 'MIFFI',
+                            pic: './imgs/avatar/6.jpg',
+                        },
+                        {
+                            avatar: 7,
+                            live: '直播中',
+                            name: 'ANDY',
+                            pic: './imgs/avatar/7.jpg',
+                        },
+                        {
+                            avatar: 8,
+                            live: '直播中',
+                            name: 'CANDY',
+                            pic: './imgs/avatar/8.jpg',
+                        },
+                        {
+                            avatar: 9,
+                            live: '直播中',
+                            name: 'MANDY',
+                            pic: './imgs/avatar/9.jpg',
+                        },
+                    ],
+                };
+            },
+        });
+        Vue.component('handball', {
+            template: `
+                <div class="handball">
+                    <p>手球的內容<p/>
+                </div>
+            `,
+        });
+        Vue.component('basketball', {
+            template: `
+                <div class="basketball">
+                    <p>籃球的內容<p/>
+                </div>
+            `,
+        });
+        Vue.component('volley', {
+            template: `
+                <div class="volley">
+                    <p>排球的內容<p/>
+                </div>
+            `,
+        });
+        Vue.component('pp', {
+            template: `
+                <div class="volley">
+                    <p>乒乓球的內容<p/>
+                </div>
+            `,
+        });
+        Vue.component('tennis', {
+            template: `
+                <div class="volley">
+                    <p>網球的內容<p/>
+                </div>
+            `,
+        });
+        Vue.component('thetable', {
+            template: `
+             <div class="tableBox">                   
+                <table class="tableLeft">
+                    <th>全場獨贏</th>
+                        <tr>
+                            <td>
+                                主勝
+                                <h3>3.25</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                客勝
+                                <span class="triangle"></span><h3 class="red">3.45</h3>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                和局
+                                <h3 class="gr">2.25</h3>
+                            </td>
+                        </tr>
+                </table>
+                <table class="tableRight">
+                    <th>全場讓球</th>
+                    <th>全場大小</th>
+                        <tr>
+                            <td>
+                                <h4>-0.5 / 1</h4>
+                                <h4>1.94</h4>
+                            </td>
+                            <td>
+                                <h4>-0.5 / 1</h4>
+                                <h4>1.94</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <h4>-0.5 / 1</h4>
+                                <h4>1.94</h4>
+                            </td>
+                            <td>
+                                <h4>-0.5 / 1</h4>
+                                <h4>1.94</h4>
+                            </td>
+                        </tr>
+                </table>
+            </div>
+            `,
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                content: 'ball'
+            },
+            computed: {
+                total() {
+                    return 89963.58;
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

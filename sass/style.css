@@ -1,0 +1,1431 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, a {
+  display: block;
+}
+
+body {
+  line-height: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+::-webkit-scrollbar {
+  /*隱藏滾輪*/
+  display: none;
+}
+
+@media all and (max-width: 576px) {
+  h2 {
+    font-size: 30px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h3 {
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h4 {
+    font-size: 22px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  p {
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+@media all and (max-width: 500px) {
+  h2 {
+    font-size: 28px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h3 {
+    font-size: 22px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h4 {
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  p {
+    font-size: 18px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+@media all and (max-width: 450px) {
+  h2 {
+    font-size: 26px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h3 {
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h4 {
+    font-size: 18px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  p {
+    font-size: 16px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+@media all and (max-width: 414px) {
+  h2 {
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h3 {
+    font-size: 18px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h4 {
+    font-size: 16px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  p {
+    font-size: 14px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+@media all and (max-width: 384px) {
+  h2 {
+    font-size: 22px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h3 {
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h4 {
+    font-size: 14px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  p {
+    font-size: 12px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+@media all and (max-width: 320px) {
+  h2 {
+    font-size: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h3 {
+    font-size: 18px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  h4 {
+    font-size: 12px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+  p {
+    font-size: 10px;
+    font-family: 'Noto Sans TC', sans-serif;
+  }
+}
+
+@media all and (max-width: 576px) {
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 1rem 1rem 0px 1rem;
+  }
+  header h1 {
+    height: 53px;
+  }
+  header h1 img {
+    height: 53px;
+    cursor: pointer;
+  }
+  header h2 {
+    font-weight: bold;
+    color: #4f82f4;
+    margin-left: 50px;
+  }
+  header h2 .yen {
+    font-weight: bold;
+    font-size: 30px;
+    color: #4f82f4;
+  }
+  header #reload {
+    margin-right: 50px;
+    cursor: pointer;
+  }
+  header #sort {
+    cursor: pointer;
+  }
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: #f5f6fa;
+  }
+  nav a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #404656;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+  }
+  nav a::after {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    position: absolute;
+    content: '';
+    display: block;
+    width: 0%;
+    bottom: 0px;
+  }
+  nav a.chk {
+    color: #4f82f4;
+  }
+  nav a.chk::after {
+    background-color: #4f82f4;
+    height: 2px;
+    width: 50%;
+  }
+  footer {
+    width: 100%;
+    padding: 0px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    z-index: 5;
+    top: initial;
+    left: 0px;
+    bottom: 0px;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    background-color: white;
+    border-radius: 30px 30px 0px 0px;
+    -webkit-box-shadow: 0px 5px 12px #666;
+            box-shadow: 0px 5px 12px #666;
+  }
+  footer a {
+    cursor: pointer;
+    padding: 10px 0px;
+  }
+  footer a img {
+    display: block;
+    margin: 0 auto;
+  }
+  footer a p {
+    margin-top: 5px;
+    color: #b7b7b7;
+    text-align: center;
+  }
+  footer a:nth-of-type(1) p {
+    color: #4f82f4;
+  }
+  p.today,
+  p.morning,
+  p.list {
+    margin: 20px;
+  }
+  section .date {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-bottom: 3px solid #f5f6fa;
+    overflow-x: auto;
+  }
+  section .date a {
+    position: relative;
+    padding: 12px 40px;
+    font-size: 22px;
+    font-family: 'Noto Sans TC', sans-serif;
+    color: #a4a9b4;
+    cursor: pointer;
+  }
+  section .date a::after {
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    position: absolute;
+    content: '';
+    display: block;
+    width: 0%;
+    bottom: 0px;
+  }
+  section .date a:nth-of-type(1) {
+    margin-left: 10px;
+    white-space: nowrap;
+  }
+  section .date a.dateChk {
+    color: #404656;
+  }
+  section .date a.dateChk::after {
+    background-color: #404656;
+    height: 3px;
+    width: 35%;
+  }
+  .ballBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow-x: auto;
+  }
+  .ballBox a {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 40px 45px 40px;
+  }
+  .ballBox a img {
+    display: block;
+  }
+  .ballBox a h4 {
+    position: absolute;
+    bottom: 14px;
+    color: #a4a9b4;
+    font-weight: bold;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, 35%);
+            transform: translate(-50%, 35%);
+    white-space: nowrap;
+  }
+  .ballBox a.ballChk {
+    background-image: url(../imgs/bg.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .handball,
+  .basketball,
+  .volley {
+    margin: 20px;
+  }
+  .banner img {
+    width: 95%;
+    display: block;
+    margin: 0 auto;
+  }
+  .broadcaster .casterUp {
+    width: 95%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 11px;
+    border-bottom: 1px solid #dadada;
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) {
+    -webkit-transform: translateY(-9px);
+            transform: translateY(-9px);
+    color: #404656;
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) img {
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  .broadcaster .casterUp h4:nth-of-type(2) {
+    color: #a4a9b4;
+  }
+  .broadcaster .casterBelow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    overflow-x: auto;
+    border-bottom: 4px solid #dbebfd;
+  }
+  .broadcaster .casterBelow a {
+    position: relative;
+    padding: 11px;
+  }
+  .broadcaster .casterBelow a .avatar {
+    width: 84px;
+    height: 84px;
+    border-radius: 100%;
+    border: 5px solid #ff008a;
+  }
+  .broadcaster .casterBelow a .avatar img {
+    width: 74px;
+    height: 74px;
+    border-radius: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  .broadcaster .casterBelow a .live {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 10%);
+            transform: translate(-50%, 10%);
+    padding: 0px 4px;
+    font-family: 'Noto Sans TC', sans-serif;
+    background-color: #ff008a;
+    border: 3px solid white;
+    border-radius: 6px;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 18px;
+    color: white;
+    white-space: nowrap;
+  }
+  .broadcaster .casterBelow a .name {
+    margin-top: 15px;
+    text-align: center;
+  }
+  .broadcaster .casterBelow a:nth-of-type(1) {
+    margin-left: 5px;
+  }
+  .game {
+    border-bottom: 4px solid #fadbdf;
+    margin-bottom: 92px;
+  }
+  .game .gameTitle {
+    background-image: url(../imgs/up.png);
+    background-repeat: no-repeat;
+    background-position: top 20px right 25px;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+    cursor: pointer;
+  }
+  .game .gameTitle h3 {
+    padding: 10px 20px;
+  }
+  .game .gameCnt .gameItem {
+    width: 93%;
+    margin: 0 auto;
+    position: relative;
+  }
+  .game .gameCnt .gameItem img.backIcon {
+    position: absolute;
+    right: -10px;
+    top: 51%;
+    z-index: 5;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    cursor: pointer;
+  }
+  .game .gameCnt .gameItem img#theback {
+    -webkit-transform: translateY(55px);
+            transform: translateY(55px);
+  }
+  .game .gameCnt .gameItem .session1 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 5px 0px;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc;
+  }
+  .game .gameCnt .gameItem .session1 p,
+  .game .gameCnt .gameItem .session1 h4 {
+    color: #7e89a6;
+  }
+  .game .gameCnt .gameItem .session1 p {
+    font-size: 16px;
+    cursor: pointer;
+  }
+  .game .gameCnt .gameItem .session1 p img {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  .game .gameCnt .gameItem .score {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 10px;
+  }
+  .game .gameCnt .gameItem .score h3.team {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .score h3.team img {
+    height: 30px;
+  }
+  .game .gameCnt .gameItem .score h3.team:nth-of-type(1) img {
+    margin-right: 10px;
+  }
+  .game .gameCnt .gameItem .score h3.team:nth-of-type(2) img {
+    margin-left: 10px;
+  }
+  .game .gameCnt .gameItem .score p {
+    line-height: 30px;
+    font-weight: bold;
+    color: #4f82f4;
+  }
+  .game .gameCnt .gameItem .belowFlex {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .game .gameCnt .gameItem .belowFlex::after {
+    position: absolute;
+    bottom: -5px;
+    left: 63%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    content: '';
+    display: block;
+    background-color: #c7c7c7;
+    width: 1rem;
+    height: 3px;
+    border-radius: 100%;
+  }
+  .game .gameCnt .gameItem .belowFlex aside {
+    height: 245px;
+    width: 157px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1,
+  .game .gameCnt .gameItem .belowFlex aside .team2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 10px 10px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 img,
+  .game .gameCnt .gameItem .belowFlex aside .team2 img {
+    margin-right: 10px;
+    height: 30px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 h3,
+  .game .gameCnt .gameItem .belowFlex aside .team2 h3 {
+    margin-right: 10px;
+    white-space: nowrap;
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 span,
+  .game .gameCnt .gameItem .belowFlex aside .team2 span {
+    color: #4f82f4;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: auto;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .icon {
+    position: absolute;
+    display: inline-block;
+    bottom: 10px;
+    left: 10px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .icon img {
+    margin-right: 7px;
+    cursor: pointer;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl {
+    width: 157px;
+    position: relative;
+    overflow: hidden;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl img.imgGirl {
+    width: 100%;
+    height: 250px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+    -webkit-transform: translateY(5px);
+            transform: translateY(5px);
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    position: absolute;
+    bottom: 44px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.35);
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName h4 {
+    margin-left: 10px;
+    color: white;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName img {
+    height: 25px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl h4.click {
+    width: 100%;
+    padding: 10px 18px;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.644);
+    color: #90b1ff;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight {
+    border-collapse: separate;
+    border-spacing: 5px;
+    text-align: center;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft th,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight th,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td {
+    background-color: #f7f8fc;
+    vertical-align: middle;
+    white-space: nowrap;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft th,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight th {
+    font-size: 16px;
+    font-weight: bold;
+    height: 40px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td {
+    position: relative;
+    font-size: 16px;
+    color: #7e89a6;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td .triangle,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td .triangle {
+    position: absolute;
+    left: 13px;
+    bottom: 17px;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 0px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid #db6372;
+    border-left: 6px solid transparent;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h3,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h3 {
+    font-size: 16px;
+    color: #404656;
+    font-weight: bold;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h3.red,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h3.red {
+    color: #db6372;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h3.gr,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h3.gr {
+    color: #69c969;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4 {
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4:nth-of-type(2),
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4:nth-of-type(2) {
+    margin-top: 10px;
+    color: #404656;
+    font-weight: bold;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft {
+    width: 33%;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
+}
+
+@media all and (max-width: 500px) {
+  header h2 {
+    margin-left: 20px;
+  }
+  header h2 .yen {
+    font-size: 28px;
+  }
+  header #reload {
+    margin-right: 20px;
+  }
+  nav a {
+    font-size: 22px;
+  }
+  section .date a {
+    font-size: 20px;
+  }
+  section .date a:nth-of-type(1) {
+    margin-left: 3px;
+  }
+  .game .gameCnt .gameItem img.backIcon {
+    height: 18px;
+    -webkit-transform: translateY(28px);
+            transform: translateY(28px);
+  }
+  .game .gameCnt .gameItem img#theback {
+    height: 18px;
+    -webkit-transform: translateY(53px);
+            transform: translateY(53px);
+  }
+  .game .gameCnt .gameItem .score h3.team {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .score h3.team img {
+    height: 25px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside {
+    height: 215px;
+    width: 140px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1,
+  .game .gameCnt .gameItem .belowFlex aside .team2 {
+    padding: 10px 5px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 img,
+  .game .gameCnt .gameItem .belowFlex aside .team2 img {
+    margin-right: 10px;
+    height: 25px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 h3,
+  .game .gameCnt .gameItem .belowFlex aside .team2 h3 {
+    margin-right: 7px;
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 span,
+  .game .gameCnt .gameItem .belowFlex aside .team2 span {
+    font-size: 18px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl {
+    width: 128px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl img.imgGirl {
+    height: 220px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName {
+    bottom: 34px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0px 0px 5px 6px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 0px 5px 6px rgba(0, 0, 0, 0.35);
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName h4 {
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName img {
+    height: 18px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl h4.click {
+    padding: 5px 18px;
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight {
+    border-spacing: 4px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td .triangle,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td .triangle {
+    bottom: 10px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4:nth-of-type(2),
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4:nth-of-type(2) {
+    margin-top: 8px;
+  }
+}
+
+@media all and (max-width: 450px) {
+  header h1 {
+    height: 40px;
+  }
+  header h1 img {
+    height: 40px;
+  }
+  header h2 {
+    margin-left: 20px;
+  }
+  header h2 .yen {
+    font-size: 26px;
+  }
+  header #reload {
+    height: 18px;
+    margin-right: 20px;
+  }
+  header #sort {
+    height: 22px;
+  }
+  nav a {
+    font-size: 20px;
+    padding: 15px;
+  }
+  nav a.chk::after {
+    width: 60%;
+  }
+  footer {
+    border-radius: 27px 27px 0px 0px;
+  }
+  footer a {
+    padding: 8px 0px;
+  }
+  footer a img {
+    height: 35px;
+  }
+  section .date a {
+    font-size: 18px;
+    padding: 12px 20px;
+  }
+  section .date a:nth-of-type(1) {
+    margin-left: 20px;
+  }
+  section .date a.dateChk::after {
+    width: 50%;
+  }
+  .ballBox a {
+    padding: 8px 25px 45px 25px;
+  }
+  .ballBox a img {
+    width: 32px;
+    -webkit-transform: translateY(3px);
+            transform: translateY(3px);
+  }
+  .ballBox a h4 {
+    -webkit-transform: translate(-50%, 20%);
+            transform: translate(-50%, 20%);
+  }
+  .ballBox a:nth-of-type(1) {
+    margin-left: 17px;
+  }
+  .ballBox a.ballChk {
+    background-size: 105%;
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) {
+    -webkit-transform: translateY(-12px);
+            transform: translateY(-12px);
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) img {
+    -webkit-transform: translateY(9px);
+            transform: translateY(9px);
+  }
+  .broadcaster .casterUp h4:nth-of-type(2) img {
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+  }
+  .broadcaster .casterBelow a .avatar {
+    width: 70px;
+    height: 70px;
+  }
+  .broadcaster .casterBelow a .avatar img {
+    width: 60px;
+    height: 60px;
+  }
+  .broadcaster .casterBelow a .live {
+    font-size: 10px;
+    -webkit-transform: translate(-50%, 13%);
+            transform: translate(-50%, 13%);
+  }
+  .broadcaster .casterBelow a .name {
+    margin-top: 12px;
+  }
+  .broadcaster .casterBelow a:nth-of-type(1) {
+    margin-left: 0px;
+  }
+  .game .gameCnt .gameTitle {
+    background-size: 14px;
+    background-position: top 20px right 25px;
+  }
+  .game .gameCnt .gameItem {
+    width: 95.5%;
+  }
+  .game .gameCnt .gameItem img.backIcon {
+    height: 15px;
+    right: -5px;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+  .game .gameCnt .gameItem img#theback {
+    height: 15px;
+    -webkit-transform: translateY(55px);
+            transform: translateY(55px);
+  }
+  .game .gameCnt .gameItem .session1 p img {
+    height: 14px;
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  .game .gameCnt .gameItem .score {
+    padding: 7px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside {
+    height: 210px;
+    width: 130px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1,
+  .game .gameCnt .gameItem .belowFlex aside .team2 {
+    padding: 10px 5px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 img,
+  .game .gameCnt .gameItem .belowFlex aside .team2 img {
+    margin-right: 8px;
+    height: 23px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 h3,
+  .game .gameCnt .gameItem .belowFlex aside .team2 h3 {
+    margin-right: 7px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 span,
+  .game .gameCnt .gameItem .belowFlex aside .team2 span {
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .icon {
+    bottom: 8px;
+    left: 8px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl {
+    width: 123px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl img.imgGirl {
+    height: 210px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl h4.click {
+    padding: 5px 18px;
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft th,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight th {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td .triangle,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td .triangle {
+    bottom: 10px;
+    border-top: 0px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #db6372;
+    border-left: 5px solid transparent;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h3,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h3 {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4 {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4:nth-of-type(2),
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4:nth-of-type(2) {
+    margin-top: 6px;
+  }
+}
+
+@media all and (max-width: 414px) {
+  header h1 {
+    height: 36px;
+  }
+  header h1 img {
+    height: 36px;
+  }
+  header h2 {
+    margin-left: 50px;
+  }
+  header h2 .yen {
+    font-size: 24px;
+  }
+  header #reload {
+    height: 16px;
+    margin-right: 15px;
+  }
+  header #sort {
+    height: 20px;
+  }
+  nav a {
+    font-size: 18px;
+    padding: 10px;
+  }
+  nav a.chk::after {
+    width: 65%;
+  }
+  footer {
+    border-radius: 23px 23px 0px 0px;
+  }
+  footer a {
+    padding: 11px 0px;
+  }
+  footer a img {
+    height: 30px;
+  }
+  footer a p {
+    margin-top: 2px;
+  }
+  section .date a {
+    font-size: 16px;
+    padding: 8px 20px;
+  }
+  section .date a:nth-of-type(1) {
+    margin-left: 15px;
+  }
+  section .date a.dateChk::after {
+    width: 50%;
+  }
+  .ballBox a h4 {
+    -webkit-transform: translate(-50%, 30%);
+            transform: translate(-50%, 30%);
+  }
+  .ballBox a:nth-of-type(1) {
+    margin-left: 10px;
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) img {
+    height: 29px;
+  }
+  .broadcaster .casterBelow a {
+    padding: 7px 11px;
+  }
+  .broadcaster .casterBelow a .avatar {
+    width: 60px;
+    height: 60px;
+    border: 4px solid #ff008a;
+  }
+  .broadcaster .casterBelow a .avatar img {
+    width: 52px;
+    height: 52px;
+  }
+  .broadcaster .casterBelow a .live {
+    font-size: 8px;
+    -webkit-transform: translate(-50%, 5%);
+            transform: translate(-50%, 5%);
+    border: 2px solid white;
+  }
+  .broadcaster .casterBelow a .name {
+    margin-top: 10px;
+  }
+  .game {
+    margin-bottom: 82px;
+  }
+  .game .gameCnt .gameItem .session1 p img#secMore {
+    -webkit-transform: translate(2px, 1px);
+            transform: translate(2px, 1px);
+  }
+  .game .gameCnt .gameItem .score {
+    padding: 5px;
+  }
+  .game .gameCnt .gameItem .score h3.team img {
+    height: 20px;
+  }
+  .game .gameCnt .gameItem .score p {
+    font-size: 16px;
+  }
+  .game .gameCnt .gameItem .belowFlex {
+    margin-bottom: 15px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside {
+    height: 200px;
+    width: 115px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1,
+  .game .gameCnt .gameItem .belowFlex aside .team2 {
+    padding: 10px 3px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 img,
+  .game .gameCnt .gameItem .belowFlex aside .team2 img {
+    margin-right: 4px;
+    height: 20px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl {
+    width: 113px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl img.imgGirl {
+    height: 200px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td .triangle,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td .triangle {
+    left: 7px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h3,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h3 {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4 {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4:nth-of-type(2),
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4:nth-of-type(2) {
+    margin-top: 5px;
+  }
+}
+
+@media all and (max-width: 384px) {
+  header {
+    margin: 0.8rem 0.8rem 0px 0.8rem;
+  }
+  header h1 {
+    height: 32px;
+  }
+  header h1 img {
+    height: 32px;
+  }
+  header h2 {
+    margin-left: 50px;
+  }
+  header h2 .yen {
+    font-size: 22px;
+  }
+  header #reload {
+    height: 13px;
+    -webkit-transform: translateY(2px);
+            transform: translateY(2px);
+    margin-right: 15px;
+  }
+  header #sort {
+    height: 18px;
+  }
+  nav a {
+    font-size: 16px;
+  }
+  footer {
+    border-radius: 23px 23px 0px 0px;
+  }
+  footer a {
+    padding: 10px 0px;
+  }
+  footer a img {
+    height: 25px;
+  }
+  footer a p {
+    margin-top: 0px;
+  }
+  section .date a {
+    font-size: 14px;
+    padding: 5px 18px;
+  }
+  section .date a:nth-of-type(1) {
+    margin-left: 15px;
+  }
+  section .date a.dateChk::after {
+    width: 45%;
+  }
+  .ballBox a {
+    padding: 8px 17px 35px 17px;
+  }
+  .ballBox a img {
+    -webkit-transform: translateY(4px);
+            transform: translateY(4px);
+  }
+  .ballBox a:nth-of-type(1) {
+    margin-left: 15px;
+  }
+  .ballBox a.ballChk {
+    background-size: 108%;
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) {
+    -webkit-transform: translateY(-6px);
+            transform: translateY(-6px);
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) img {
+    height: 23px;
+  }
+  .broadcaster .casterUp h4:nth-of-type(2) img {
+    height: 12px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  .broadcaster .casterBelow a {
+    padding: 4px 9px;
+  }
+  .broadcaster .casterBelow a .avatar {
+    width: 55px;
+    height: 55px;
+    border: 3px solid #ff008a;
+  }
+  .broadcaster .casterBelow a .avatar img {
+    width: 49px;
+    height: 49px;
+  }
+  .broadcaster .casterBelow a .live {
+    line-height: 16px;
+    font-size: 6px;
+    -webkit-transform: translate(-50%, 5%);
+            transform: translate(-50%, 5%);
+  }
+  .broadcaster .casterBelow a .name {
+    margin-top: 8px;
+  }
+  .game {
+    margin-bottom: 72px;
+  }
+  .game .gameCnt .gameItem img#theback {
+    -webkit-transform: translateY(50px);
+            transform: translateY(50px);
+  }
+  .game .gameCnt .gameItem .session1 p {
+    font-size: 12px;
+  }
+  .game .gameCnt .gameItem .session1 p img {
+    height: 12px;
+  }
+  .game .gameCnt .gameItem .belowFlex {
+    margin-bottom: 12px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl {
+    width: 113px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl img.imgGirl {
+    height: 193px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName {
+    -webkit-box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.35);
+            box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.35);
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName h4 {
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h3,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h3 {
+    -webkit-transform: translateY(-2px);
+            transform: translateY(-2px);
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4:nth-of-type(2),
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4:nth-of-type(2) {
+    margin-top: 3px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  header {
+    margin: 0.7rem 0.7rem 0px 0.7rem;
+  }
+  header h1 {
+    height: 28px;
+  }
+  header h1 img {
+    height: 28px;
+  }
+  header h2 {
+    margin-left: 20px;
+  }
+  header h2 .yen {
+    font-size: 20px;
+  }
+  header #reload {
+    height: 12px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+    margin-right: 10px;
+  }
+  header #sort {
+    height: 16px;
+  }
+  nav a {
+    font-size: 14px;
+    padding: 7px;
+  }
+  nav a.chk::after {
+    width: 70%;
+  }
+  footer {
+    border-radius: 20px 20px 0px 0px;
+  }
+  footer a {
+    padding: 8px 0px;
+  }
+  footer a img {
+    height: 20px;
+  }
+  section .date a {
+    font-size: 12px;
+    padding: 5px 16px;
+  }
+  section .date a:nth-of-type(1) {
+    margin-left: 12px;
+  }
+  section .date a.dateChk::after {
+    width: 45%;
+  }
+  .ballBox a {
+    padding: 0px 15px 35px 15px;
+  }
+  .ballBox a img {
+    width: 28px;
+    -webkit-transform: translateY(10px);
+            transform: translateY(10px);
+  }
+  .ballBox a:nth-of-type(1) {
+    margin-left: 12px;
+  }
+  .ballBox a.ballChk {
+    background-size: 109%;
+  }
+  .broadcaster .casterUp h4:nth-of-type(1) img {
+    height: 20px;
+  }
+  .broadcaster .casterUp h4:nth-of-type(2) img {
+    height: 10px;
+  }
+  .broadcaster .casterBelow a .avatar {
+    width: 48px;
+    height: 48px;
+  }
+  .broadcaster .casterBelow a .avatar img {
+    width: 42px;
+    height: 42px;
+  }
+  .broadcaster .casterBelow a .live {
+    line-height: 12px;
+  }
+  .broadcaster .casterBelow a .name {
+    margin-top: 0px;
+  }
+  .game {
+    margin-bottom: 65px;
+  }
+  .game .gameCnt .gameItem .score h3.team {
+    font-size: 12px;
+  }
+  .game .gameCnt .gameItem .score h3.team img {
+    height: 18px;
+  }
+  .game .gameCnt .gameItem .score p {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside {
+    width: 100px;
+    height: 190px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 img, .game .gameCnt .gameItem .belowFlex aside .team2 img {
+    height: 18px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 h3, .game .gameCnt .gameItem .belowFlex aside .team2 h3 {
+    font-size: 12px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside .team1 span, .game .gameCnt .gameItem .belowFlex aside .team2 span {
+    font-size: 14px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl {
+    width: 100px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl img.imgGirl {
+    height: 185px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName img {
+    height: 15px;
+  }
+  .game .gameCnt .gameItem .belowFlex aside.girl .girlName h4 {
+    font-size: 14px;
+    margin-left: 6px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft th,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight th {
+    font-size: 12px;
+    height: 20px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td .triangle,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td .triangle {
+    bottom: 13px;
+    left: 4px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h3,
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h3 {
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+    font-size: 12px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft td h4:nth-of-type(2),
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td h4:nth-of-type(2) {
+    margin-top: 0px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableLeft th {
+    padding: 6px 0px;
+  }
+  .game .gameCnt .gameItem .belowFlex .tableBox table.tableRight td {
+    height: 30px;
+  }
+}
+/*# sourceMappingURL=style.css.map */
