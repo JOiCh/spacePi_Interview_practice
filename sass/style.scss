@@ -351,6 +351,8 @@
                        display: flex;
                        align-items: center;
                        font-size: 16px;
+                       flex-wrap: nowrap;
+                       white-space: nowrap;
                        img{
                            height: 30px;
                        }
@@ -486,6 +488,7 @@
 
                         table.tableLeft,
                         table.tableRight {
+                            height: 245px;
                             border-collapse: separate;
                             border-spacing: 5px;
                             text-align: center;
@@ -691,6 +694,7 @@
                         table.tableLeft,
                         table.tableRight {
                             border-spacing: 4px;
+                            height: 215px;
 
                             td {
 
@@ -940,6 +944,7 @@
 
                         table.tableLeft,
                         table.tableRight {
+                            height: 210px;
                             th {
                                 font-size: 14px;
                             }
@@ -1161,7 +1166,7 @@
 
                         table.tableLeft,
                         table.tableRight {
-                           
+                            height: 200px;
                             td {
                                
                                 .triangle {
@@ -1366,7 +1371,7 @@
 
                         table.tableLeft,
                         table.tableRight {
-                           
+                            height: 200px;
                             td {
                                
                                 h3{
@@ -1577,6 +1582,7 @@
                     .tableBox {
                         table.tableLeft,
                         table.tableRight {
+                            height: 190px;
                             th{
                                 font-size: 12px;
                                 height: 20px;
